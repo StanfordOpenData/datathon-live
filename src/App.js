@@ -1,24 +1,26 @@
-import React from "react";
+import React, { Component } from "react";
 import Navbar from "./components/navbar";
-import Home from "./components/home";
-import About from "./components/about";
-import Tracks from "./components/tracks";
-import FAQ from "./components/faq";
-import Sponsors from "./components/sponsors";
+import Mentors from "./components/mentors";
+import Landings from "./components/landing";
+import Info from "./components/info";
 import Footer from "./components/footer";
 
-function App() {
-  return (
-    <div>
-      <Navbar />
-      <Home />
-      <About />
-      <Tracks />
-      <FAQ />
-      <Sponsors />
-      <Footer />
-    </div>
-  );
+import { Switch, Route } from "react-router-dom"
+
+class App extends Component {
+  render() {
+    return (
+        <div>
+          <Navbar />
+          <Switch>
+            <Route exact path='/' component={Landings} />
+            <Route exact path='/about' component={Info} />
+            <Route exact path='/mentors' component={Mentors} />
+          </Switch>
+          <Footer/>
+        </div>
+    );
+  }
 }
 
 export default App;
