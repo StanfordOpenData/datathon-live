@@ -20,7 +20,7 @@ function NavBar() {
               <Nav.Link href="/mentors" class="nav-link">Mentors and Judges</Nav.Link>
               <Button variant="outline-primary shadow-none">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSekpg0-j0vEGCWg9ZM534NdDofMMaJggohJXFv6b1MrGPUYpw/viewform" 
-                target="_blank" rel="noopener noreferrer">Apply Now!</a>
+                target="_blank" rel="noopener noreferrer">Submit Here!</a>
               </Button>
             </Nav>
           </Navbar.Collapse>
