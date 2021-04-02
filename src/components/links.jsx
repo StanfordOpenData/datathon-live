@@ -15,11 +15,11 @@ function Links() {
          </Button>
         <Button variant="outline-primary shadow-none">
           <img src={devpost} alt="drive"/>
-          <a href="http://eepurl.com/hnqk9H" target="_blank" rel="noopener noreferrer">Devpost</a>
+          <a href="https://stanford-open-datathon.devpost.com/" target="_blank" rel="noopener noreferrer">Devpost</a>
          </Button>
         <Button variant="outline-primary shadow-none">
           <img src={drive} alt="drive"/>
-          <a href="http://eepurl.com/hnqk9H" target="_blank" rel="noopener noreferrer">Handbook</a>
+          <a href="https://drive.google.com/drive/u/1/folders/1GHG3h-HSHteXUaQwTV44cgAQi-k1Djdb" target="_blank" rel="noopener noreferrer">Handbook</a>
          </Button>
       </div>
     </div>

@@ -11,7 +11,7 @@ function Home() {
         <h5>Submissions due 4/11 at 12:00PM PDT!</h5>
         <div id="buttonbank">
           <Button variant="primary shadow-none">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSekpg0-j0vEGCWg9ZM534NdDofMMaJggohJXFv6b1MrGPUYpw/viewform" 
+            <a href="https://stanford-open-datathon.devpost.com/" 
             target="_blank" rel="noopener noreferrer">Submit Here!</a>
           </Button>
           <Button variant="outline-primary shadow-none"><a href="http://eepurl.com/hnqk9H" target="_blank" rel="noopener noreferrer">See Events</a></Button>

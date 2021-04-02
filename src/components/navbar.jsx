@@ -17,9 +17,9 @@ function NavBar() {
             <Nav>
               <Nav.Link href="/" class="nav-link">Home</Nav.Link>
               <Nav.Link href="/about" class="nav-link">About</Nav.Link>
-              <Nav.Link href="/mentors" class="nav-link">Mentors and Judges</Nav.Link>
+              {/*<Nav.Link href="/mentors" class="nav-link">Mentors and Judges</Nav.Link>*/}
               <Button variant="outline-primary shadow-none">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSekpg0-j0vEGCWg9ZM534NdDofMMaJggohJXFv6b1MrGPUYpw/viewform" 
+                <a href="https://stanford-open-datathon.devpost.com/" 
                 target="_blank" rel="noopener noreferrer">Submit Here!</a>
               </Button>
             </Nav>

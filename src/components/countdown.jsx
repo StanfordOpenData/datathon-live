@@ -52,6 +52,7 @@ class CountDown extends React.Component {
           <h1 className="separator">:</h1>
           <TimerComponent value={[times[3], "SECONDS"]}/>
         </div>
+        <h1>Until {date === START_DATE ? "Opening Ceremony!" : "Submission Deadline!"}</h1>
       </div>
     )
   }
