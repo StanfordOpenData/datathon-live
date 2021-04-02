@@ -1,0 +1,60 @@
+#countdown {
+  border-radius: 10px;
+  border: 2px solid $Light-aqua;
+  margin: 0 3rem;
+  padding: 2rem 1rem;
+  color: $Light-blue;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  #timer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    
+    #timercomponent {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    h1 {
+      font-size: 5vw;
+      font-weight: bold;
+
+      @media screen and (max-width: 768px) {
+        font-size: 8vw;
+      }
+    }
+
+    h1.separator {
+      padding-left: 3vw;
+      padding-right: 3vw;
+
+      @media screen and (max-width: 1024px) {
+        padding-left: 3vw;
+        padding-right: 3vw;
+      }
+    }
+
+    h1.timernumber {
+      color: $Medium-aqua;
+    }
+
+    p {
+      font-size: 1.25vw;
+
+      @media screen and (max-width: 768px) {
+        font-size: 2vw;
+      }
+      
+    }
+  }
+
+}

@@ -13,6 +13,10 @@
       margin-right: 0;
     }
 
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
+
     * {
       padding-bottom: 35px;
     }
@@ -44,6 +48,10 @@
       font-size: $small-font - 4px;
       padding: .75rem 2.5rem;
       border-radius: .5rem;
+
+      @media screen and (max-width: 768px) {
+        margin: 10px;
+      }
     }
 
     /* Solid Button */
@@ -80,7 +88,7 @@
     height: 90%;
     object-fit: cover;
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1200px) {
       display: none;
     }
   }

@@ -8,6 +8,7 @@ const logos = {
   "CS": require("../Images/Sponsors/CS.png"),
   "SEA": require("../Images/Sponsors/SEA.jpeg"),
   "SIEPR": require("../Images/Sponsors/SIEPR.png"),
+  "SSG": require("../Images/Sponsors/SSG.png"),
   "PIT": require("../Images/Sponsors/PIT.png")
 }
 
