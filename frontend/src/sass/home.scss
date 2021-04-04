@@ -1,0 +1,95 @@
+#home {
+  display: flex;
+  margin: auto;
+  width: 80%;
+  padding-top: 20vh;
+  padding-bottom: 10vh;
+
+  #home-content {
+    min-width: 45%;
+    margin-right: 15%;
+
+    @media screen and (max-width: 1024px) {
+      margin-right: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
+
+    * {
+      padding-bottom: 35px;
+    }
+
+    #home-logo {
+      max-height: 10vh;
+    }
+  
+    h1#Title {
+      color: $White;
+      font-weight: 800;
+      font-size: $superlarge-font;
+    }
+  
+    h4 {
+      color: $Light-aqua;
+      font-weight: 500;
+      font-size: $medium-font - 4px;
+    }
+
+    h5 {
+      color: $Light-aqua;
+    }
+
+    button {
+      margin-right: 30px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      font-size: $small-font - 4px;
+      padding: .75rem 2.5rem;
+      border-radius: .5rem;
+
+      @media screen and (max-width: 768px) {
+        margin: 10px;
+      }
+    }
+
+    /* Solid Button */
+    button.btn-primary {
+      background-color: $Aqua;
+      border-color: $Aqua;
+      
+      a {
+        color: $White;
+      }
+    }
+
+    button.btn-primary:hover {
+      background-color: #009DA4;
+      border-color: #009DA4;
+    }
+
+    /* Transparent Button */
+    button.btn-outline-primary {
+      color: $Light-aqua;
+      border-color: $Light-aqua;
+      a {
+        color: $Light-aqua;
+      }
+    }
+
+    button.btn-outline-primary:hover {
+      background-color: rgba(193, 229, 225, .1);
+    }
+  }
+  #Hero {
+    min-width: 40%;
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+
+    @media screen and (max-width: 1200px) {
+      display: none;
+    }
+  }
+}

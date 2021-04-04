@@ -1,0 +1,52 @@
+#faq {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 80%;
+  padding: 10vh 0vh;
+
+  .section-heading {
+    color: $Light-aqua;
+  }
+
+  .card {
+    margin-top: 2.5vh;
+    background-color: transparent;
+    border-radius: .5rem;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .card-header {
+    border-radius: .5rem;
+    border-bottom: none;
+    background-color: $Light-blue;
+    color: $Blue;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: $default-font + 4px;
+  }
+
+  .card-header:hover {
+    background-color: #D1EDEF;
+  }
+
+  .card-header:active {
+    background-color: $Light-aqua;
+  }
+
+  .card-body {
+    color: $Light-blue;
+    font-weight: 400;
+    font-size: $default-font;
+
+    a {
+      color: $White;
+      font-weight: 500;
+    }
+
+    a:hover {
+      color: #E5E5E5;
+    }
+  }
+}

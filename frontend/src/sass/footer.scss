@@ -1,0 +1,35 @@
+#footer {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  background-color: $Light-blue;
+  padding: 20px 0;
+
+  #logos {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    a {
+      img {
+        padding: 5px;
+      }
+    }
+  }
+
+  p {
+    font-family: 'Roboto Mono';
+    font-weight: 700;
+    font-size: $small-font - 4px;
+    margin: 0;
+    color: $Navy;
+
+    a {
+      color: $Navy;
+    }
+
+    a:hover {
+      color: #194063;
+    }
+  }
+}
