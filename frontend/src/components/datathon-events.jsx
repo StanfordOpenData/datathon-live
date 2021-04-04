@@ -116,7 +116,16 @@ function Links() {
               })}
             </div>
           </Col>
-          <Col xs={12} md={6} style={{ height: 600, overflow: "scroll" }}>
+          <Col
+            xs={12}
+            md={6}
+            style={{
+              height: 600,
+              display: "flex",
+              flexDirection: "column",
+              overflow: "hidden",
+            }}
+          >
             <div
               style={{
                 fontWeight: "bold",
@@ -127,56 +136,58 @@ function Links() {
               Upcoming Events
             </div>
 
-            <Row
-              style={{
-                display: "flex",
-                justifyContent: "flex-start",
-                padding: 20,
-              }}
-            >
-              {dates.map((date) => {
-                return (
-                  <div
-                    style={{
-                      padding: "10px 20px",
-                      backgroundColor: "yellow",
-                      marginRight: 10,
-                      borderRadius: 3,
-                      marginTop: 10,
-                    }}
-                  >
-                    {date.date}
-                  </div>
-                );
-              })}
-            </Row>
-            <div
-              style={{
-                padding: "10px 5px",
-                borderRadius: 10,
-                overflowY: "scroll",
-              }}
-            >
-              {events.map((event) => {
-                return (
-                  <>
+            <div style={{ overflow: "scroll", flex: 1 }}>
+              <Row
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-start",
+                  padding: 20,
+                }}
+              >
+                {dates.map((date) => {
+                  return (
                     <div
-                      key={event.id}
                       style={{
-                        backgroundColor: "#f4f4f4",
-                        padding: "10px 15px",
-                        margin: 0,
-                        borderRadius: 10,
-                        marginBottom: 10,
+                        padding: "10px 20px",
+                        backgroundColor: "yellow",
+                        marginRight: 10,
+                        borderRadius: 3,
+                        marginTop: 10,
                       }}
                     >
-                      <div>{event.title}</div>
-                      <div>{event.date}</div>
-                      <div>{event.time}</div>
+                      {date.date}
                     </div>
-                  </>
-                );
-              })}
+                  );
+                })}
+              </Row>
+              <div
+                style={{
+                  padding: "10px 5px",
+                  borderRadius: 10,
+                  overflowY: "scroll",
+                }}
+              >
+                {events.map((event) => {
+                  return (
+                    <>
+                      <div
+                        key={event.id}
+                        style={{
+                          backgroundColor: "#f4f4f4",
+                          padding: "10px 15px",
+                          margin: 0,
+                          borderRadius: 10,
+                          marginBottom: 10,
+                        }}
+                      >
+                        <div>{event.title}</div>
+                        <div>{event.date}</div>
+                        <div>{event.time}</div>
+                      </div>
+                    </>
+                  );
+                })}
+              </div>
             </div>
           </Col>
         </Row>
