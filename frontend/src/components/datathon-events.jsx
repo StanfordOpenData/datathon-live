@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Modal } from "react-bootstrap";
 import styled from "styled-components";
 import devpost from "../Images/devpost.svg";
 import slack from "../Images/slack.svg";
@@ -11,21 +11,38 @@ import api from "../global/api.js";
 
 function Links() {
   const [slackNotifs, setSlackNotifs] = useState([]);
-  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedDialog, setSelectedDialog] = useState({
+    eventId: null,
+  });
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const [selectedDate, setSelectedDate] = useState({
+    date: "",
+    id: null,
+  });
   const dates = [
     {
+      id: 1,
       date: "March 20",
     },
     {
+      id: 2,
       date: "March 21",
     },
     {
+      id: 3,
       date: "March 22",
     },
     {
+      id: 4,
       date: "March 23",
     },
     {
+      id: 5,
       date: "March 24",
     },
   ];
@@ -36,36 +53,42 @@ function Links() {
       title: "Coffee Chat with Daniel Ma",
       date: "March 20, 2021",
       time: "10:30 am - 11:30 am PST",
+      description: "Something something something something 1",
     },
     {
       id: 2,
       title: "Coffee Chat with Daniel Ma",
       date: "March 20, 2021",
       time: "10:30 am - 11:30 am PST",
+      description: "Something something something something 2",
     },
     {
       id: 3,
       title: "Coffee Chat with Daniel Ma",
       date: "March 20, 2021",
       time: "10:30 am - 11:30 am PST",
+      description: "Something something something something 3",
     },
     {
       id: 4,
       title: "Coffee Chat with Daniel Ma",
       date: "March 20, 2021",
       time: "10:30 am - 11:30 am PST",
+      description: "Something something something something 4",
     },
     {
       id: 5,
       title: "Coffee Chat with Daniel Ma",
       date: "March 20, 2021",
       time: "10:30 am - 11:30 am PST",
+      description: "Something something something something 5",
     },
     {
       id: 6,
       title: "Coffee Chat with Daniel Ma",
       date: "March 20, 2021",
       time: "10:30 am - 11:30 am PST",
+      description: "Something something something something 6",
     },
   ];
 
@@ -78,8 +101,15 @@ function Links() {
       .catch((err) => console.log(err));
   };
 
-  const toggleDateSelect = (date) => {
-    setSelectedDate(date);
+  const toggleDateSelect = (date, id) => {
+    setSelectedDate({ date: date, id: id });
+  };
+
+  const renderDialogBox = (event) => {
+    console.log("CLICKED DILOG BOX:@!!");
+    setSelectedDialog({ title: event.title, description: event.description });
+    setShow(true);
+    return <></>;
   };
 
   useEffect(() => {
@@ -131,8 +161,10 @@ function Links() {
                 {dates.map((date) => {
                   return (
                     <DateCard
-                      selected={selectedDate.length > 0}
-                      onClick={() => toggleDateSelect(date.date)}
+                      key={date.id}
+                      selectedDate={selectedDate.id}
+                      isSelected={selectedDate.date === date ? true : false}
+                      onClick={() => toggleDateSelect(date.date, date.id)}
                     >
                       {date.date}
                     </DateCard>
@@ -145,7 +177,10 @@ function Links() {
                     <>
                       <EventCard
                         key={event.id}
-                        onClick={() => console.log("render dialog here")}
+                        onClick={() => {
+                          console.log("render dialog here");
+                          renderDialogBox(event);
+                        }}
                       >
                         <div>{event.title}</div>
                         <div>{event.date}</div>
@@ -159,6 +194,17 @@ function Links() {
           </Col>
         </Row>
       </Container>
+      <Modal style={{ marginTop: 300 }} show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>{selectedDialog.title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{selectedDialog.description}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }
@@ -223,12 +269,14 @@ const DateCard = styled.div`
   margin-right: 10px;
   border-radius: 3px;
   margin-bottom: 10px;
-  ${({ selected }) => {
-    return `
-    color: rgba(28, 117, 188, 1);
-    background-color: rgba(225,244,253,1);
-   `;
-  }};
+  ${({ selectedDate, isSelected }) => {
+    console.log("SELECTED!");
+    if (selectedDate && isSelected) {
+      console.log("selected: ", selectedDate);
+      return `background-color: purple`;
+    }
+  }}
+  }
 `;
 const EventCard = styled.div`
   background-color: #f4f4f4;
