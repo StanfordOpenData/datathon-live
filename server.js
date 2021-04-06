@@ -16,21 +16,7 @@ app.get("/slackAnnouncements", (req, res) => {
     })
     .then((data) => {
       const results = [];
-      //   res.json(data.data.messages).end();
       data.data.messages.forEach((item) => {
-        // if (typeof item.text !== "undefined") {
-        //   results.push({ text: item.text, timestamp: item.ts, type: "system" });
-        // } else {
-        //   let text = "";
-        //   item.blocks.forEach((block) => {
-        //     if (block.type === "rich_text") {
-        //       block.elements.forEach((element) => {
-        //         text += element.text;
-        //       });
-        //     }
-        //   });
-        //   results.push({ text: text, timestamp: item.ts, type: "message" });
-        // }
         if (typeof item.text !== "undefined") {
           results.push({
             text: item.text,
