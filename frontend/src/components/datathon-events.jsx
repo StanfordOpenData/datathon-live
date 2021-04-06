@@ -234,5 +234,4 @@ const EventCard = styled.div`
 const EventCardContainer = styled.div`
   padding: 10px 5px;
   border-radius: 10px;
-  overflow-y: scroll;
 `;
