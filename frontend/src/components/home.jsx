@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Hero from '../Images/Hero.png';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 function Home() {
   return (
@@ -14,7 +15,7 @@ function Home() {
             <a href="https://stanford-open-datathon.devpost.com/" 
             target="_blank" rel="noopener noreferrer">Submit Here!</a>
           </Button>
-          <Button variant="outline-primary shadow-none"><a href="http://eepurl.com/hnqk9H" target="_blank" rel="noopener noreferrer">See Events</a></Button>
+          <Button variant="outline-primary shadow-none"><AnchorLink href="#link-section">See Events</AnchorLink></Button>
         </div>
         
       </div>

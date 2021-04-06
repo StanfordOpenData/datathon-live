@@ -6,8 +6,19 @@ import devpost from "../Images/devpost.svg";
 import slack from "../Images/slack.svg";
 import drive from "../Images/drive.svg";
 import dayjs from "dayjs";
+import { dates, events } from "./content.json"
 
 import api from "../global/api.js";
+
+function Zoom(selectedDialog) {
+  if (selectedDialog.zoom) {
+    console.log(selectedDialog);
+    return (
+      <Modal.Body><a href={selectedDialog.zoom}>Zoom Link</a></Modal.Body>
+    )
+  }
+  return null;
+}
 
 function Links() {
   const [slackNotifs, setSlackNotifs] = useState([]);
@@ -24,73 +35,6 @@ function Links() {
     date: "",
     id: null,
   });
-  const dates = [
-    {
-      id: 1,
-      date: "March 20",
-    },
-    {
-      id: 2,
-      date: "March 21",
-    },
-    {
-      id: 3,
-      date: "March 22",
-    },
-    {
-      id: 4,
-      date: "March 23",
-    },
-    {
-      id: 5,
-      date: "March 24",
-    },
-  ];
-
-  const events = [
-    {
-      id: 1,
-      title: "Coffee Chat with Daniel Ma",
-      date: "March 20, 2021",
-      time: "10:30 am - 11:30 am PST",
-      description: "Something something something something 1",
-    },
-    {
-      id: 2,
-      title: "Coffee Chat with Daniel Ma",
-      date: "March 20, 2021",
-      time: "10:30 am - 11:30 am PST",
-      description: "Something something something something 2",
-    },
-    {
-      id: 3,
-      title: "Coffee Chat with Daniel Ma",
-      date: "March 20, 2021",
-      time: "10:30 am - 11:30 am PST",
-      description: "Something something something something 3",
-    },
-    {
-      id: 4,
-      title: "Coffee Chat with Daniel Ma",
-      date: "March 20, 2021",
-      time: "10:30 am - 11:30 am PST",
-      description: "Something something something something 4",
-    },
-    {
-      id: 5,
-      title: "Coffee Chat with Daniel Ma",
-      date: "March 20, 2021",
-      time: "10:30 am - 11:30 am PST",
-      description: "Something something something something 5",
-    },
-    {
-      id: 6,
-      title: "Coffee Chat with Daniel Ma",
-      date: "March 20, 2021",
-      time: "10:30 am - 11:30 am PST",
-      description: "Something something something something 6",
-    },
-  ];
 
   const retrieveSlackAnnouncements = () => {
     api
@@ -107,7 +51,7 @@ function Links() {
 
   const renderDialogBox = (event) => {
     console.log("CLICKED DILOG BOX:@!!");
-    setSelectedDialog({ title: event.title, description: event.description });
+    setSelectedDialog({ title: event.title, description: event.description, zoom: event.zoom });
     setShow(true);
     return <></>;
   };
@@ -198,7 +142,8 @@ function Links() {
         <Modal.Header closeButton>
           <Modal.Title>{selectedDialog.title}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>{selectedDialog.description}</Modal.Body>
+        <Modal.Body>People of Interest: {selectedDialog.description}</Modal.Body>
+        <Zoom {...selectedDialog}></Zoom>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
