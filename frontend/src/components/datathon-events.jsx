@@ -6,7 +6,7 @@ import devpost from "../Images/devpost.svg";
 import slack from "../Images/slack.svg";
 import drive from "../Images/drive.svg";
 import dayjs from "dayjs";
-import { dates, events } from "./content.json"
+import { dates, events } from "./content.json";
 
 import api from "../global/api.js";
 
@@ -14,8 +14,10 @@ function Zoom(selectedDialog) {
   if (selectedDialog.zoom) {
     console.log(selectedDialog);
     return (
-      <Modal.Body><a href={selectedDialog.zoom}>Zoom Link</a></Modal.Body>
-    )
+      <Modal.Body>
+        <a href={selectedDialog.zoom}>Zoom Link</a>
+      </Modal.Body>
+    );
   }
   return null;
 }
@@ -30,6 +32,82 @@ function Links() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [dates, setDates] = useState([
+    {
+      id: 1,
+      selected: false,
+      date: "March 20",
+    },
+    {
+      id: 2,
+      selected: false,
+
+      date: "March 21",
+    },
+    {
+      id: 3,
+      selected: false,
+
+      date: "March 22",
+    },
+    {
+      id: 4,
+      selected: false,
+
+      date: "March 23",
+    },
+    {
+      id: 5,
+      selected: false,
+
+      date: "March 29",
+    },
+  ]);
+
+  const events = [
+    {
+      id: 1,
+      title: "Coffee Chat with Daniel Ma",
+      date: "March 20, 2021",
+      time: "10:30 am - 11:30 am PST",
+      description: "Something something something something 1",
+    },
+    {
+      id: 2,
+      title: "Coffee Chat with Daniel Ma",
+      date: "March 20, 2021",
+      time: "10:30 am - 11:30 am PST",
+      description: "Something something something something 2",
+    },
+    {
+      id: 3,
+      title: "Coffee Chat with Daniel Ma",
+      date: "March 20, 2021",
+      time: "10:30 am - 11:30 am PST",
+      description: "Something something something something 3",
+    },
+    {
+      id: 4,
+      title: "Coffee Chat with Daniel Ma",
+      date: "March 20, 2021",
+      time: "10:30 am - 11:30 am PST",
+      description: "Something something something something 4",
+    },
+    {
+      id: 5,
+      title: "Coffee Chat with Daniel Ma",
+      date: "March 20, 2021",
+      time: "10:30 am - 11:30 am PST",
+      description: "Something something something something 5",
+    },
+    {
+      id: 6,
+      title: "Coffee Chat with Daniel Ma",
+      date: "March 20, 2021",
+      time: "10:30 am - 11:30 am PST",
+      description: "Something something something something 6",
+    },
+  ];
 
   const [selectedDate, setSelectedDate] = useState({
     date: "",
@@ -42,16 +120,28 @@ function Links() {
       .then((res) => {
         setSlackNotifs(res.data.filter((item) => item.type !== "system"));
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log("DILAN THERE IS ERROR"));
   };
 
   const toggleDateSelect = (date, id) => {
-    setSelectedDate({ date: date, id: id });
+    var newDates = JSON.parse(JSON.stringify(dates));
+    newDates.forEach((date) => {
+      if (date.id === id) {
+        date.selected = true;
+      } else {
+        date.selected = false;
+      }
+    });
+    setDates(newDates);
   };
 
   const renderDialogBox = (event) => {
     console.log("CLICKED DILOG BOX:@!!");
-    setSelectedDialog({ title: event.title, description: event.description, zoom: event.zoom });
+    setSelectedDialog({
+      title: event.title,
+      description: event.description,
+      zoom: event.zoom,
+    });
     setShow(true);
     return <></>;
   };
@@ -66,7 +156,7 @@ function Links() {
       <h2 class="section-heading">Datathon Events</h2>
       <Container style={{}}>
         <Row style={{ display: "flex", justifyContent: "center" }}>
-          <Col xs={12} md={6}>
+          <Col xs={12} md={6} style={{ paddingTop: 30 }}>
             <MainTitles>Announcements</MainTitles>
             <AnnouncementContainer>
               {slackNotifs.map((notif) => {
@@ -86,10 +176,10 @@ function Links() {
             xs={12}
             md={6}
             style={{
-              height: 600,
               display: "flex",
               flexDirection: "column",
               overflow: "hidden",
+              paddingTop: 30,
             }}
           >
             <MainTitles>Upcoming Events</MainTitles>
@@ -105,6 +195,7 @@ function Links() {
                 {dates.map((date) => {
                   return (
                     <DateCard
+                      style={date.selected ? styles.filled : styles.notFilled}
                       key={date.id}
                       selectedDate={selectedDate.id}
                       isSelected={selectedDate.date === date ? true : false}
@@ -142,7 +233,9 @@ function Links() {
         <Modal.Header closeButton>
           <Modal.Title>{selectedDialog.title}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>People of Interest: {selectedDialog.description}</Modal.Body>
+        <Modal.Body>
+          People of Interest: {selectedDialog.description}
+        </Modal.Body>
         <Zoom {...selectedDialog}></Zoom>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
@@ -156,6 +249,15 @@ function Links() {
 
 export default Links;
 
+const styles = {
+  filled: {
+    backgroundColor: "red",
+  },
+  notFilled: {
+    backgroundColor: "purple",
+  },
+};
+
 const MainTitles = styled.div`
   color: rgba(102, 198, 177, 1);
   line-height: 100%;
@@ -163,7 +265,7 @@ const MainTitles = styled.div`
   font-weight: bold;
   font-style: normal;
   font-family: Sora;
-  margin-bottom: 30px;
+  padding-bottom: 30px;
 `;
 
 const AnnouncementContainer = styled.div`
