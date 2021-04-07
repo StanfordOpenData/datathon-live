@@ -125,21 +125,22 @@
   ],
   "dates": [
     {
-      "id": 1,
+      "id": 49,
       "date": "April 9"
     },
     {
-      "id": 2,
+      "id": 410,
       "date": "April 10"
     },
     {
-      "id": 3,
+      "id": 411,
       "date": "April 11"
     }
   ],
   "events": [
     {
       "id": 1,
+      "dateId": 49,
       "title": "Opening remarks (logistics, rules, and background)",
       "date": "April 9",
       "time": "4:00 PM - 4:20 PM PST",
@@ -149,6 +150,8 @@
     {
       "id": 2,
       "title": "Opening keynote + Q&A",
+      "dateId": 49,
+
       "date": "April 9",
       "time": "4:20 PM - 5:00 PM PST",
       "description": "Richard Coffin - USAFacts Chief Product Officer",
@@ -157,6 +160,8 @@
     {
       "id": 3,
       "title": "Different Samples, Different Stories(Second keynote + Q&A)",
+      "dateId": 410,
+
       "date": "April 10",
       "time": "5:00 PM - 5:45 PM PST",
       "description": "Maria Gargiulo - Human Rights Data Analysis Group",
@@ -165,6 +170,8 @@
     {
       "id": 4,
       "title": "Projects Due on Devpost",
+      "dateId": 411,
+
       "date": "April 11",
       "time": "12:00 PM PST",
       "description": "All Participants"
@@ -172,6 +179,8 @@
     {
       "id": 5,
       "title": "Finalists announced and prepare presentations",
+      "dateId": 411,
+
       "date": "April 11",
       "time": "3:00 PM - 4:00 PM PST",
       "description": "Finalists"
@@ -179,6 +188,8 @@
     {
       "id": 6,
       "title": "Finalists Presentation",
+      "dateId": 411,
+
       "date": "April 11",
       "time": "4:00 PM - 4:45 PM PST",
       "description": "Finalists, grand judges",
@@ -187,6 +198,8 @@
     {
       "id": 7,
       "title": "Closing Remarks, Winners Announced",
+      "dateId": 411,
+
       "date": "April 11",
       "time": "4:45 PM - 5:00 PM PST",
       "description": "Datathon organizers, grand judges",

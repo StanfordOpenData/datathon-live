@@ -3,7 +3,10 @@ import Button from "react-bootstrap/Button";
 import { Container, Row, Col, Modal } from "react-bootstrap";
 import styled from "styled-components";
 import dayjs from "dayjs";
-import { dates, events } from "./content.json";
+import {
+  dates as OfficialDates,
+  events as OfficialEvents,
+} from "./content.json";
 
 import api from "../global/api.js";
 
@@ -29,7 +32,8 @@ function Links() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [curDates, setDates] = useState(dates);
+  const [dates, setDates] = useState(OfficialDates);
+  const [events, setEvents] = useState(OfficialEvents);
 
   const [selectedDate, setSelectedDate] = useState({
     date: "",
@@ -46,7 +50,8 @@ function Links() {
   };
 
   const toggleDateSelect = (date, id) => {
-    var newDates = JSON.parse(JSON.stringify(curDates));
+    var newDates = JSON.parse(JSON.stringify(dates));
+    var newEvents = JSON.parse(JSON.stringify(OfficialEvents));
     newDates.forEach((date) => {
       if (date.id === id) {
         date.selected = true;
@@ -54,7 +59,17 @@ function Links() {
         date.selected = false;
       }
     });
+    var updatedEvents = [];
+    newEvents.forEach((event) => {
+      if (event.dateId === id) {
+        updatedEvents.push(event);
+      }
+    });
+    setEvents(updatedEvents);
+
     setDates(newDates);
+    // setEvents(newEvents);
+    console.log("THIS IS LINE 67 NEW EVENTS: ", events);
   };
 
   const renderDialogBox = (event) => {
@@ -69,7 +84,8 @@ function Links() {
 
   useEffect(() => {
     retrieveSlackAnnouncements();
-  }, []);
+    setEvents(OfficialEvents);
+  }, [OfficialEvents]);
 
   return (
     <div id="link-section">
