@@ -4,4 +4,10 @@
       padding-bottom: 100px;
     }
   }
+
+  .container > .row > .col-12 > div > .row > div:hover {
+    background-color: $Navy !important;
+  }
+
+
 }
