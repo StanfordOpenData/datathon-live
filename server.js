@@ -9,7 +9,7 @@ const port = process.env.PORT || 5000;
 
 app.get("/slackAnnouncements", (req, res) => {
   axios
-    .get("https://slack.com/api/conversations.history?channel=C01TES4JXRS", {
+    .get("https://slack.com/api/conversations.history?channel=C01T59TQKGE", {
       headers: {
         Authorization: "Bearer " + process.env.SLACK_TOKEN,
       },
