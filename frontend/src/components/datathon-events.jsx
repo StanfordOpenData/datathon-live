@@ -35,11 +35,6 @@ function Links() {
   const [dates, setDates] = useState(OfficialDates);
   const [events, setEvents] = useState(OfficialEvents);
 
-  const [selectedDate, setSelectedDate] = useState({
-    date: "",
-    id: null,
-  });
-
   const retrieveSlackAnnouncements = () => {
     api
       .get("/slackAnnouncements")
@@ -66,10 +61,7 @@ function Links() {
       }
     });
     setEvents(updatedEvents);
-
     setDates(newDates);
-    // setEvents(newEvents);
-    console.log("THIS IS LINE 67 NEW EVENTS: ", events);
   };
 
   const renderDialogBox = (event) => {
@@ -133,8 +125,6 @@ function Links() {
                     <DateCard
                       style={date.selected ? styles.filled : styles.notFilled}
                       key={date.id}
-                      selectedDate={selectedDate.id}
-                      isSelected={selectedDate.date === date ? true : false}
                       onClick={() => toggleDateSelect(date.date, date.id)}
                     >
                       {date.date}
@@ -253,14 +243,6 @@ const DateCard = styled.div`
   margin-right: 10px;
   border-radius: 3px;
   margin-bottom: 10px;
-  ${({ selectedDate, isSelected }) => {
-    console.log("SELECTED!");
-    if (selectedDate && isSelected) {
-      console.log("selected: ", selectedDate);
-      return `background-color: purple`;
-    }
-  }}
-  }
 `;
 const EventCard = styled.div`
   background-color: #f4f4f4;
