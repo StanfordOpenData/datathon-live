@@ -10,8 +10,8 @@ class Landing extends React.Component {
       <div>
         <Home />
         <CountDown />
-        <DatathonEvents />
         <Links />
+        <DatathonEvents />
       </div>
     );
   }
