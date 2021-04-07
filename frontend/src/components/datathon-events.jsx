@@ -176,10 +176,10 @@ export default Links;
 
 const styles = {
   filled: {
-    backgroundColor: "red",
+    backgroundColor: "#002B52",
   },
   notFilled: {
-    backgroundColor: "purple",
+    backgroundColor: "#1C75BC",
   },
 };
 
