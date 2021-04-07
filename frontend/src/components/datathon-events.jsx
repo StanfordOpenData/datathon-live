@@ -2,9 +2,6 @@ import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import { Container, Row, Col, Modal } from "react-bootstrap";
 import styled from "styled-components";
-import devpost from "../Images/devpost.svg";
-import slack from "../Images/slack.svg";
-import drive from "../Images/drive.svg";
 import dayjs from "dayjs";
 import { dates, events } from "./content.json";
 
@@ -32,82 +29,7 @@ function Links() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [dates, setDates] = useState([
-    {
-      id: 1,
-      selected: false,
-      date: "March 20",
-    },
-    {
-      id: 2,
-      selected: false,
-
-      date: "March 21",
-    },
-    {
-      id: 3,
-      selected: false,
-
-      date: "March 22",
-    },
-    {
-      id: 4,
-      selected: false,
-
-      date: "March 23",
-    },
-    {
-      id: 5,
-      selected: false,
-
-      date: "March 29",
-    },
-  ]);
-
-  const events = [
-    {
-      id: 1,
-      title: "Coffee Chat with Daniel Ma",
-      date: "March 20, 2021",
-      time: "10:30 am - 11:30 am PST",
-      description: "Something something something something 1",
-    },
-    {
-      id: 2,
-      title: "Coffee Chat with Daniel Ma",
-      date: "March 20, 2021",
-      time: "10:30 am - 11:30 am PST",
-      description: "Something something something something 2",
-    },
-    {
-      id: 3,
-      title: "Coffee Chat with Daniel Ma",
-      date: "March 20, 2021",
-      time: "10:30 am - 11:30 am PST",
-      description: "Something something something something 3",
-    },
-    {
-      id: 4,
-      title: "Coffee Chat with Daniel Ma",
-      date: "March 20, 2021",
-      time: "10:30 am - 11:30 am PST",
-      description: "Something something something something 4",
-    },
-    {
-      id: 5,
-      title: "Coffee Chat with Daniel Ma",
-      date: "March 20, 2021",
-      time: "10:30 am - 11:30 am PST",
-      description: "Something something something something 5",
-    },
-    {
-      id: 6,
-      title: "Coffee Chat with Daniel Ma",
-      date: "March 20, 2021",
-      time: "10:30 am - 11:30 am PST",
-      description: "Something something something something 6",
-    },
-  ];
+  const [curDates, setDates] = useState(dates);
 
   const [selectedDate, setSelectedDate] = useState({
     date: "",
@@ -124,7 +46,7 @@ function Links() {
   };
 
   const toggleDateSelect = (date, id) => {
-    var newDates = JSON.parse(JSON.stringify(dates));
+    var newDates = JSON.parse(JSON.stringify(curDates));
     newDates.forEach((date) => {
       if (date.id === id) {
         date.selected = true;
@@ -136,7 +58,6 @@ function Links() {
   };
 
   const renderDialogBox = (event) => {
-    console.log("CLICKED DILOG BOX:@!!");
     setSelectedDialog({
       title: event.title,
       description: event.description,
@@ -150,7 +71,6 @@ function Links() {
     retrieveSlackAnnouncements();
   }, []);
 
-  console.log(selectedDate);
   return (
     <div id="link-section">
       <h2 class="section-heading">Datathon Events</h2>
@@ -275,6 +195,7 @@ const AnnouncementContainer = styled.div`
   border-radius: 20px;
   padding-bottom: 20px;
   overflow: scroll;
+  overflow-x: hidden;
   margin-bottom: 20px;
 `;
 
