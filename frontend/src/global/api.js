@@ -2,6 +2,6 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://datathonbackend.netlify.app",
+  baseURL: "https://datathonbackend.herokuapp.com/"
 });
 export default api;
