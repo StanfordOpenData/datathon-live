@@ -12,7 +12,6 @@ import api from "../global/api.js";
 
 function Zoom(selectedDialog) {
   if (selectedDialog.zoom) {
-    console.log(selectedDialog);
     return (
       <Modal.Body>
         <a href={selectedDialog.zoom}>Zoom Link</a>
@@ -111,7 +110,7 @@ function Links() {
             }}>
             {/*<MainTitles>Upcoming Events</MainTitles>*/}
 
-            <div style={{ flex: 1 }}>
+            <div style={{ "overflow-y": "scroll", "overflow-x": "hidden", flex: 1 }}>
               <Row
                 style={{
                   display: "flex",
