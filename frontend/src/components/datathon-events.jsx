@@ -197,8 +197,10 @@ const AnnouncementContainer = styled.div`
   min-height: 92%;
   background-color: #e1f4fd;
   border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   padding-bottom: 20px;
-  overflow: scroll;
+  overflow-y: scroll;
   overflow-x: hidden;
   margin-bottom: 20px;
 `;
