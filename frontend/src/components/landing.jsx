@@ -3,6 +3,7 @@ import Home from "../components/home";
 import CountDown from "../components/countdown";
 import Links from "../components/links";
 import DatathonEvents from "../components/datathon-events";
+import Sponsors from "../components/sponsors";
 
 class Landing extends React.Component {
   render() {
@@ -10,8 +11,9 @@ class Landing extends React.Component {
       <div>
         <Home />
         <CountDown />
-        <DatathonEvents />
         <Links />
+        <DatathonEvents />
+        <Sponsors />
       </div>
     );
   }
