@@ -83,7 +83,7 @@ function Links() {
       <h2 class="section-heading">Datathon Events</h2>
       <Container style={{}}>
         <Row style={{ display: "flex", justifyContent: "center" }}>
-          {/*<Col xs={12} md={6} style={{ paddingTop: 30 }}>
+          <Col xs={12} md={6} style={{ paddingTop: 30 }}>
             <MainTitles>Announcements</MainTitles>
             <AnnouncementContainer>
               {slackNotifs.map((notif) => {
@@ -98,7 +98,7 @@ function Links() {
                 );
               })}
             </AnnouncementContainer>
-          </Col>*/}
+          </Col>
           <Col
             xs={12}
             md={6}
@@ -108,7 +108,7 @@ function Links() {
               overflow: "hidden",
               paddingTop: 30,
             }}>
-            {/*<MainTitles>Upcoming Events</MainTitles>*/}
+            <MainTitles>Upcoming Events</MainTitles>
 
             <div style={{ "overflow-y": "scroll", "overflow-x": "hidden", flex: 1 }}>
               <Row
