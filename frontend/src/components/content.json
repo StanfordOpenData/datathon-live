@@ -35,15 +35,24 @@
       "content": "The Stanford Open Datathon is a weekend-long event for students from all disciplines to work on a project related to open data. The datathon will provide resources to support sustainable, long-term projects and engagements with open data that improve transparency and accountability at universities. These could include original pieces of policy advocacy, data modeling, data journalism, building an open data portal for your university. We hope the Stanford Open Datathon will serve as the starting point for long-term open data endeavors across the world."
     }
   ],
-
+  "unused": [
+    {
+      "q": "When is the application deadline?",
+      "a": "3/17/21 11:59 PM PST. We hope to see you apply!"
+    },
+    {
+      "q": "When will I find out if I am accepted?",
+      "a": "Our application deadline is 3/15, and we hope to notify all applicants of their status within 2 weeks."
+    }
+  ],
   "faq": [
     {
       "q": "What is the Stanford Open Datathon?",
       "a": "The Stanford Open Datathon is a weekend-long event for participants to work on a project related to open data. We aim to provide resources to support sustainable, long-term open data projects that improve transparency and accountability at universities. We hope the Stanford Open Datathon will serve as the starting point for long-term open data endeavors across the world."
     },
     {
-      "q": "When is the application deadline?",
-      "a": "3/17/21 11:59 PM PST. We hope to see you apply!"
+      "q": "What are the prizes?",
+      "a": "$1000 for each winning team for each track, with the Public Interest Technology Lab @ Stanford sponsoring the Policy and Advocacy Track. There are 3 special awards - Most original contribution to public understanding award (USAFacts), Most Ethically Minded award (Stanford Ethics, Society, and Technology Hub), Long Term Societal Impact award (Stanford Ethics, Society, and Technology Hub). For more information, refer to the Participant Handbook."
     },
     {
       "q": "Who is eligible to participate?",
@@ -70,10 +79,6 @@
       "a": "The datathon will occur over the weekend from April 9th to 11th."
     },
     {
-      "q": "When will I find out if I am accepted?",
-      "a": "Our application deadline is 3/15, and we hope to notify all applicants of their status within 2 weeks."
-    },
-    {
       "q": "Other questions?",
       "link": "mailto:stanfordopendataproject@gmail.com",
       "textb": "Email us at ",
@@ -95,6 +100,11 @@
     {
       "name": "CS",
       "link": "https://cs.stanford.edu/",
+      "size": "large"
+    },
+    {
+      "name": "ECON",
+      "link": "https://economics.stanford.edu/",
       "size": "large"
     },
     {

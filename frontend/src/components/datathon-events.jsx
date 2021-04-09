@@ -110,7 +110,7 @@ function Links() {
             }}>
             <MainTitles>Upcoming Events</MainTitles>
 
-            <div style={{ "overflow-y": "scroll", "overflow-x": "hidden", flex: 1 }}>
+            <div style={{ "max-height":"80vh", "overflow-y": "scroll", "overflow-x": "hidden", flex: 1 }}>
               <Row
                 style={{
                   display: "flex",
@@ -194,7 +194,7 @@ const MainTitles = styled.div`
 
 const AnnouncementContainer = styled.div`
   flex: 1;
-  min-height: 92%;
+  max-height: 80vh;
   background-color: #e1f4fd;
   border-radius: 20px;
   padding-left: 10px;

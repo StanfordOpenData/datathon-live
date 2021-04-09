@@ -6,6 +6,7 @@ const logos = {
   "EST": require("../Images/Sponsors/EST.png"),
   "USAFacts": require("../Images/Sponsors/USAFacts.png"),
   "CS": require("../Images/Sponsors/CS.png"),
+  "ECON": require("../Images/Sponsors/ECON.png"),
   "SEA": require("../Images/Sponsors/SEA.jpeg"),
   "SIEPR": require("../Images/Sponsors/SIEPR.png"),
   "SSG": require("../Images/Sponsors/SSG.png"),
